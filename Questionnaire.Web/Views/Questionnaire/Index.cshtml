@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Questionnaire.Entity.Questionnaire_>
+
+@{
+    ViewBag.Title = "Questionaire";
+}
+
+    <h2><span class="fa fa-connectdevelop"></span> Questionaire</h2>
+
+<h5>
+    @Html.ActionLink("Create New Questionaire", "Create")
+</h5>
+
+<hr/>
+<br />
+
+        @*<p>
+            @Html.DisplayNameFor(model => model.Title)
+        </p>*@
+
+
+    @foreach (var item in Model)
+    {
+        <section id="services" class="services service-section">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-4 col-sm-6 services">
+                        <span class="icon icon-strategy"></span>
+                        <div class="services-content">
+                            <h2>@Html.DisplayFor(modelItem => item.Title)</h2>
+                            <p>
+                                @Html.ActionLink("Edit Questionaire", "Edit", new { id = item.QuestionnaireID }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.QuestionnaireID }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.QuestionnaireID })
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    }
+
+
